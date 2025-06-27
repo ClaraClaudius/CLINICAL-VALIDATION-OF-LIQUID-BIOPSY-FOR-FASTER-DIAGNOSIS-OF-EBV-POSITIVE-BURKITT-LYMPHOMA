@@ -14,6 +14,20 @@ This repository contains all R scripts and synthetic data used to produce the re
   - Figure 7B
   - Figure 7C
 
+### Data Simulation Methods
+
+To protect participant privacy, no real patient data is included in this repository. Two approaches were used to generate synthetic datasets for demonstration and reproducibility:
+
+#### 1. Statistical Synthesis (`synthpop`-based)
+For datasets where the original structure was accessible, synthetic data was generated using the `synthpop` R package. This method preserves variable relationships and simulates realistic distributions. The script used for this can be found in:
+- `scripts/Rscript_synthetic_dataset.R`
+
+#### 2. Rule-Based Mock Data Simulation
+For datasets where `synthpop` was not appropriate due to small sample size (n = 56), mock datasets were created using manually defined value ranges and distributions (`sample()`, `runif()`, `rnorm()`, etc.). These simulate realistic clinical data structure without preserving actual patient characteristics. The corresponding script is:
+- `scripts/Rscript_mockdataset.R`
+
+Both scripts generate CSV files located in the `datasets/` folder.
+
 ## How to Reproduce
 1. Clone this repository:
    ```bash
